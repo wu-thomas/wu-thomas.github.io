@@ -205,6 +205,17 @@ ul.task-list input[type="checkbox"] {
       margin: 0;
     }
   }
+
+  .typed-info {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    // min-height: 30px; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    display: inline-block;
+    margin: 0;
+  }
 }
 
 .profile.float-right {

@@ -1,9 +1,13 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Sci. Total Environ.":
+  color: "#5ec564"
 
-"Vision":
-  color: "#009f36"
+"JRSSA":
+  color: "#68448b"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#e07730"
+  
+"Report":
+  color: "#1951a0"

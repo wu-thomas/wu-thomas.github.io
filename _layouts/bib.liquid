@@ -152,7 +152,12 @@
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% assign journal_lc = entry.journal | downcase %}
+      {% if journal_lc contains "arxiv" %}
+        {% capture entrytype %}<em>arXiv preprint</em>{% endcapture %}
+      {% else %}
+        {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% endif %}
     {% elsif proceedings contains entry.type %}
       {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
     {% elsif thesis contains entry.type %}
@@ -242,6 +247,12 @@
         {% else %}
           <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
         {% endif %}
+      {% endif %}
+      {% if entry.talk %}
+        <a href="{{ entry.talk }}" class="btn btn-sm z-depth-0" role="button">Talk</a>
+      {% endif %}
+      {% if entry.preprint %}
+        <a href="{{ entry.preprint }}" class="btn btn-sm z-depth-0" role="button">Preprint</a>
       {% endif %}
       {% if entry.slides %}
         {% if entry.slides contains '://' %}
